@@ -20,7 +20,11 @@ Outputs:
 5. Accuracy for both models.
 
 
-Example of the output is below (PLEASE VIEW IN RAW FORMAT):
+Example of the output is below (DUE TO FORMATTING ISSUES, PLEASE SELECT/VIEW IN RAW FORMAT IN THE UPPER RIGHT HAND CORNER):
+
+
+
+
 
 __________________Logistic Regression Results__________________
 
