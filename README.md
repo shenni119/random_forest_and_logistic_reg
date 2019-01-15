@@ -1,4 +1,5 @@
 Goal:
+
 I tried to understand what features cause a successful tutor-student pairing/relationship. Success is a binary dependent variable: 1 if the tutor and student had 3 or more sessions together, 0 otherwise. I then had to communicate my findings to non-technical colleagues, including the sales and tutor sourcing team.
 
 What project does (general): 
