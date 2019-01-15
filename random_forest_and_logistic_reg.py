@@ -175,7 +175,9 @@ logreg = LogisticRegression()
 logreg.fit(X_train, y_train)
 y_pred = logreg.predict(X_test)
 print ('__________________Logistic Regression Results__________________')
+print ('                                                            ')
 print('Accuracy of logistic regression classifier on test set: {:.2f}'.format(logreg.score(X_test, y_test)))
+print ('                                                            ')
 
 # CONFUSION MATRIX
 # confusion_matrix = confusion_matrix(y_test, y_pred)
@@ -215,7 +217,9 @@ baseline_projection_series = y_test
 baseline_projection_df=baseline_projection_series.to_frame()
 baseline_projection_df['baseline_projection']=baseline_projection_series.mean()
 baseline_err = abs(baseline_projection_df['baseline_projection'] - y_test)
+print ('                                                            ')
 print ('__________________Random Forest Results__________________')
+print ('                                                            ')
 print('Average baseline accuracy: ', 1-round(np.mean(baseline_err), 3))
 
 from sklearn.ensemble import RandomForestRegressor
@@ -226,9 +230,14 @@ rf_model.fit(X_train, y_train)
 rf_prediction = rf_model.predict(X_test)
 
 rf_error = abs(rf_prediction - y_test)
+print ('                                                            ')
 print('Average random forest accuracy:', 1-round(np.mean(rf_error), 3))
-
 print ('____________________Random Forest Feature Importance______________________')
-
-for name, importance in zip(indep_var_list, rf_model.feature_importances_):
-    print(name, "=", importance)
+print ('                                                            ')
+feature_importances = pd.DataFrame(rf_model.feature_importances_,\
+    index = X_train.columns,\
+    columns=['importance']).sort_values('importance',\
+    ascending=False)
+# for name, importance in zip(indep_var_list, rf_model.feature_importances_):
+#     print(name, "=", importance)
+print (feature_importances)
